@@ -3,9 +3,11 @@ import threading
 import time as t
 import os
 
+#method that returns the size of a string in bytes
 def utf8len(s):
     return len(s.encode('utf-8'))
 
+#method to implement the time-to-live property
 def Timer(key,timer):
     print("Thread started")
     time = int(timer)
@@ -24,6 +26,7 @@ def Timer(key,timer):
     file.write(s)
     file.close()
 
+#initializes json object
 class JSON_OBJECT:
     def __init__(self, json, time, key):
         self.json = json
@@ -31,6 +34,8 @@ class JSON_OBJECT:
         if time !=-1:
             thread = threading.Thread(target=Timer, args=(key,self.time))
             thread.start()
+            
+#class that defines the CRD methods 
 class Main:
     def __init__(self,dir):
         self.DIR = dir
