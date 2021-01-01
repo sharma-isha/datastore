@@ -39,6 +39,7 @@ class JSON_OBJECT:
 class Main:
     def __init__(self,dir):
         self.DIR = dir
+        file = open('DataStore.txt','w+')
         file = open('DataStore.txt','r')
         self.data = dict()
         s = file.read()
